@@ -23,3 +23,4 @@ def test_wait_for_the_dropdown(browser_chrome, make, model, zipcode):
     select.select_by_visible_text(model)
     browser_chrome.find_element(By.CLASS_NAME, "textbox__control").send_keys(zipcode)
     browser_chrome.find_element(By.CLASS_NAME, "motors-finder__find-btn").click()
+    assert make in browser_chrome.title
